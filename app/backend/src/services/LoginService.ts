@@ -9,7 +9,7 @@ class LoginService {
     this._response = await Users.findOne({ where: { email } });
     if (this._response === null) {
       const error = new Error('Incorrect email or password');
-      error.name = 'UnauthorizedUserError';
+      error.name = 'unauthorizedUserError';
       throw error;
     }
 
@@ -19,7 +19,7 @@ class LoginService {
 
     if (!response) {
       const error = new Error('Incorrect email or password');
-      error.name = 'UnauthorizedUserError';
+      error.name = 'unauthorizedUserError';
       throw error;
     }
 
