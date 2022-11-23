@@ -1,3 +1,5 @@
+/* 
+ */
 'use strict';
 
 module.exports = {
@@ -16,7 +18,7 @@ module.exports = {
      userName: {
       type: Sequelize.STRING,
       allowNull: false,
-      fild: 'username',
+      field: 'username',
      },
      role: {
       type: Sequelize.STRING,
