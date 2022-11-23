@@ -21,6 +21,7 @@ User.init({
   userName: {
     type: STRING,
     allowNull: false,
+    field: 'username',
   },
   role: {
     type: STRING,
@@ -35,9 +36,10 @@ User.init({
     allowNull: false,
   },
 }, {
-  underscored: true,
+  // underscored: true,
   sequelize: db,
   timestamps: false,
+  modelName: 'users',
 });
 
 export default User;
