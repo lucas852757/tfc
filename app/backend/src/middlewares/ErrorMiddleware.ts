@@ -3,10 +3,10 @@ import { Request, Response, ErrorRequestHandler, NextFunction } from 'express';
 import ErrorMiddleware from '../interfaces/errMiddlewareInterface';
 
 const errors = {
-  validationError: 400,
+  // validationError: 400,
   unauthorizedUserError: 401,
   notFoundError: 404,
-  jsonWebTokenError: 401,
+  // JsonWebTokenError: 401,
   bankError: 500,
   twoEqualsTeamsError: 401,
 
