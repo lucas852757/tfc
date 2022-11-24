@@ -1,6 +1,7 @@
 import bcrypt = require('bcryptjs');
 import jsonwebtoken = require('jsonwebtoken');
 import Users from '../database/models/UserModel';
+import UserInterface from '../interfaces/UsersInterface';
 
 class LoginService {
   private _response: Users | null | undefined;
@@ -11,11 +12,13 @@ class LoginService {
       const error = new Error('Incorrect email or password');
       error.name = 'unauthorizedUserError';
       throw error;
-    }
+}
 
-    const { password: passwordIntoDB } = this._response?.toJSON() as Users;
-
+    const { dataValues } = this._response as UserInterface;
+    const { password: passwordIntoDB } = dataValues;
     const response = await bcrypt.compare(password, passwordIntoDB);
+
+    // const response = await bcrypt.compare(password, passwordIntoDB);
 
     if (!response) {
       const error = new Error('Incorrect email or password');
