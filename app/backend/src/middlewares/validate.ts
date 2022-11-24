@@ -1,23 +1,21 @@
 import { Request, Response, NextFunction } from 'express';
-import Joi = require('joi');
+import jsonwebtoken = require('jsonwebtoken');
 
-const valtidate = (req: Request, _res: Response, next: NextFunction) => {
+const validate = async (req: Request, res: Response, next: NextFunction) => {
+  const secret = process.env.JWT_SECRET || 'jwt_secret';
+  const token = req.headers.authorization;
+  if (!token) {
+    return res.status(401).json({ messagage: 'Token not found' });
+  }
+
   try {
-    const { email, password } = req.body;
-    const schema = Joi.object({
-      email: Joi.string().email().required()
-        .messages({ 'string.empty': 'All fields must be filled' }),
-      password: Joi.string().not().empty().required()
-        .messages({ 'string.empty': 'All fields must be filled' }),
-    });
-    const { error } = schema.validate({ email, password });
-    console.log(error);
-    if (error) {
-      throw error;
-    }
-    next();
+    const decoded = jsonwebtoken.verify(token, secret) as jsonwebtoken.JwtPayload;
+    const { role } = decoded.data;
+    return res.status(200).json(role);
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };
-export default valtidate;
+
+export default validate;
