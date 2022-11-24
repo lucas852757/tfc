@@ -12,7 +12,7 @@ class LoginService {
       const error = new Error('Incorrect email or password');
       error.name = 'unauthorizedUserError';
       throw error;
-}
+    }
 
     const { dataValues } = this._response as UserInterface;
     const { password: passwordIntoDB } = dataValues;
