@@ -11,10 +11,12 @@ const validate = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const decoded = jsonwebtoken.verify(token, secret) as jsonwebtoken.JwtPayload;
     const { role } = decoded.data;
-    return res.status(200).json(role);
+
+    return res.status(200).json({ role });
   } catch (error) {
+    return res.status(401).json({ message: 'jwt malformed' });
     console.log(error);
-    next(error);
+    next();
   }
 };
 
