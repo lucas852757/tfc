@@ -15,7 +15,7 @@ module.exports = {
         primaryKey:true,
       },
       teamName: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         field: 'team_name',
       }
