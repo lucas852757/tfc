@@ -16,6 +16,10 @@ Match.init({
     autoIncrement: true,
     primaryKey: true,
   },
+  homeTeam: {
+    type: INTEGER,
+    allowNull: false,
+  },
   homeTeamGoals: {
     type: INTEGER,
     allowNull: false,
