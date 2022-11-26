@@ -11,7 +11,7 @@ module.exports = {
     await queryInterface.createTable('matches', { id: {
       type:Sequelize.INTEGER,
       primaryKey: true,
-      autoIncrement: false,
+      autoIncrement: true,
     },
     homeTeam: {
       type: Sequelize.INTEGER,
