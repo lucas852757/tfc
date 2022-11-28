@@ -11,7 +11,7 @@ class MatchService {
         { model: Team, as: 'teamAway', attributes: { exclude: ['id'] } },
       ],
     });
-    
+
     return this._response;
   };
 }
