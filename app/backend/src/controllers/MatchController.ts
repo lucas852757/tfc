@@ -6,7 +6,8 @@ class MatchController {
 
   public match = async (req:Request, res:Response, next:NextFunction) => {
     try {
-      const response = await this.matchService.match();
+      const { inProgress } = req.query;
+      const response = await this.matchService.match(inProgress as string);
       return res.status(200).json(response);
     } catch (error) {
       console.log(error);
