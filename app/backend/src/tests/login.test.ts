@@ -3,17 +3,13 @@ import * as sinon from 'sinon';
 import * as chai from 'chai';
 // @ts-ignore
 import chaiHttp = require('chai-http');
-
 import App from '../app';
-const { app } = new App();
-// import Example from '../database/models/ExampleModel';
-// import models from '../database/models';
-import { Response } from 'superagent';
 import Users from '../database/models/UserModel';
 import * as bcrypt from 'bcryptjs';
 
-chai.use(chaiHttp);
+const { app } = new App();
 
+chai.use(chaiHttp);
 
 describe('routes/login', () => {
   beforeEach(sinon.restore);
