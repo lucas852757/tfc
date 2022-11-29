@@ -1,4 +1,3 @@
-import { ParsedQs } from 'qs';
 import Team from '../database/models/TeamModel';
 import Match from '../database/models/MatchModel';
 import filter from '../solid/choiceTrueOrFalse';
@@ -14,13 +13,19 @@ class MatchService {
       ],
     });
 
-    if(arg === 'true') {
+    if (!this._response.length) {
+      const error = new Error('Not found error');
+      error.name = 'notFoundError';
+      throw error;
+    }
+
+    if (arg === 'true') {
       return filter(arg, this._response);
     }
-    if(arg === 'false') {
+    if (arg === 'false') {
       return filter(arg, this._response);
     }
-    
+
     return this._response;
   };
 }
