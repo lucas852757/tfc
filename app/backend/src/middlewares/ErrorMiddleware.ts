@@ -8,7 +8,7 @@ const errors = {
   notFoundError: 404,
   // JsonWebTokenError: 401,
   bankError: 500,
-  twoEqualsTeamsError: 401,
+  twoEqualsTeamsError: 422,
 
   // Erros do Joi
   'string.min': 422,
