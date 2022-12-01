@@ -1,3 +1,4 @@
+/* source: https://sebhastian.com/sequelize-update-example/ */
 import Match from '../database/models/MatchModel';
 
 class MatchesPatchIdFinishService {
