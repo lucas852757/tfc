@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 
 import MatchesPatchIdFinish from '../services/MatchesPatchIdFinishService';
 
-class MatchesPatchIdController {
+class MatchesPatchIdFinishController {
   constructor(private matchesPatchIdFinish = new MatchesPatchIdFinish()) {}
 
   public matchesPatchId = async (req: Request, res: Response, next: NextFunction) => {
@@ -17,4 +17,4 @@ class MatchesPatchIdController {
   };
 }
 
-export default MatchesPatchIdController;
+export default MatchesPatchIdFinishController;
