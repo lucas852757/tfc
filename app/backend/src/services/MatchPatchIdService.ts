@@ -10,7 +10,7 @@ class MatchPatchIdService {
       { where: { id: arg1 } },
     );
 
-   /*  if (!this._response[0]) {
+    /*  if (!this._response[0]) {
       const error = new Error('Not found error');
       error.name = 'notFoundError';
       throw error;
