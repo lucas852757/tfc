@@ -1,4 +1,3 @@
-
 import Match from '../database/models/MatchModel';
 
 // total of points
@@ -17,14 +16,14 @@ const totalPoints = (list: Match[]) => {
     if (list[count].homeTeamGoals > list[count].awayTeamGoals
     ) {
       homeTeamGoalsPoints += 3;
-      awayTeamGoalsPoints += 0;
+      // awayTeamGoalsPoints += 0;
     } else if (list[count].homeTeamGoals < list[count].awayTeamGoals
     ) {
       homeTeamGoalsPoints += 0;
-      awayTeamGoalsPoints += 3;
+      // awayTeamGoalsPoints += 3;
     } else {
       homeTeamGoalsPoints += 1;
-      awayTeamGoalsPoints += 1;
+      // awayTeamGoalsPoints += 1;
     }
   }
 
