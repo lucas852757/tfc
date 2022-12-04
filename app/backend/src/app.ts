@@ -30,7 +30,7 @@ class App {
     this.app.use('/matches', matchRoutes);
     this.app.use('/login', loginRoutes);
     this.app.use('/teams', teamsRoutes);
-    this.app.use('/leaderboardhome', leaderBoardHomeRoutes);
+    this.app.use('/leaderboard', leaderBoardHomeRoutes);
     this.app.use(errorMiddleware);
   }
 

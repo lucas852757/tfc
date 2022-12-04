@@ -4,6 +4,6 @@ import LeaderBoardHomeController from '../controllers/LeaderBoardHomeController'
 const leaderBoardHomeController = new LeaderBoardHomeController();
 const route = Router();
 
-route.get('/', leaderBoardHomeController.leaderBoardHome);
+route.get('/home', leaderBoardHomeController.leaderBoardHome);
 
 export default route;
