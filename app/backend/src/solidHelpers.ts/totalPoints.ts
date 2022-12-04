@@ -4,7 +4,7 @@ import Match from '../database/models/MatchModel';
 // this functinon calc the total points of a winner based on some rules
 const totalPoints = (list: Match[]) => {
   let homeTeamGoalsPoints = 0;
-  let awayTeamGoalsPoints = 0;
+  // let awayTeamGoalsPoints = 0;
 
   // const lengthList = listOfFiltereds.length;
   /**
