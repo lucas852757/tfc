@@ -6,6 +6,10 @@ class Team extends Model {
   id!: number;
   teamName!: string;
   teamHome!: void;
+  // totalPoints!: number;
+  // goalsBalance!: number;
+  // goalsFavor!: number;
+  // goalsOwn!: number;
 }
 
 Team.init({
