@@ -11,7 +11,7 @@ import Team from '../database/models/TeamModel';
 // import Rank from '../interfaces/RankInterface';
 
 const calcLeaderBoardHome = (list: Team[]) => {
-   return list.map((o) => ({
+  return list.map((o) => ({
     name: o.teamName,
     totalPoints: totalPoints(o.teamHome as unknown as Match[]),
     totalGames: totalGames(o.teamHome as unknown as Match[]),
@@ -25,19 +25,6 @@ const calcLeaderBoardHome = (list: Team[]) => {
         - totalGoalsOwn(o.teamHome as unknown as Match[]),
     efficiency: efficiency(o.id, o.teamHome as unknown as Match[]),
   }));
- /*  return list.sort((a, b) => {
-    if (a.totalPoints === b.totalPoints) {
-      if (a.goalsBalance === b.goalsBalance) {
-        if (a.goalsFavor === b.goalsFavor) {
-          return a.goalsOwn - b.goalsOwn;
-        }
-        return b.goalsFavor - a.goalsFavor;
-      }
-      return b.goalsBalance - a.goalsBalance;
-    }
-    return b.totalPoints - a.totalPoints;
-  }); */
-  // console.log(list);
 };
 
 export default calcLeaderBoardHome;
