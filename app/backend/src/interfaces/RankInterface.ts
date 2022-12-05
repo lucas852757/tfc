@@ -7,7 +7,7 @@ interface Rank {
   totalLosses: number,
   goalsFavor: number,
   goalsOwn: number,
-  goalsBalence: number,
+  goalsBalance: number,
   efficiency: string,
 }
 
