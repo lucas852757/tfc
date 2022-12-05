@@ -10,7 +10,7 @@ import totalLosses from '../solidHelpers.ts/totalLosses';
 import totalGoalsFavor from '../solidHelpers.ts/totalGoalsFavor';
 import totalGoalsOwn from '../solidHelpers.ts/totalGoalsOwn';
 import efficiency from '../solidHelpers.ts/efficiency';
-import sortArray from '../solid/sortArray';
+import calcLeaderBoardHome from '../solid/calcLeaderBoardHome';
 import Rank from '../interfaces/RankInterface';
 
 class LeaderBoardHomeService {
@@ -18,10 +18,10 @@ class LeaderBoardHomeService {
 
   public leaderBoardHome = async () => {
     this._response = await Team.findAll({
-      include: { model: Match, as: 'teamHome', where: { inProgress: false } },
+      include: { model: Match, as: 'teamHome', where: { inProgress: false }, },
     });
 
-    this._response.map((o) => ({
+    /* this._response.map((o) => ({
       name: o.teamName,
       totalPoints: totalPoints(o.teamHome as unknown as Match[]),
       totalGames: totalGames(o.teamHome as unknown as Match[]),
@@ -30,12 +30,23 @@ class LeaderBoardHomeService {
       totalLosses: totalLosses(o.teamHome as unknown as Match[]),
       goalsFavor: totalGoalsFavor(o.teamHome as unknown as Match[]),
       goalsOwn: totalGoalsOwn(o.teamHome as unknown as Match[]),
-      goalsBalence:
+      goalsBalance:
           totalGoalsFavor(o.teamHome as unknown as Match[])
           - totalGoalsOwn(o.teamHome as unknown as Match[]),
       efficiency: efficiency(o.id, o.teamHome as unknown as Match[]),
-    }));
-    return sortArray(this._response as unknown as Rank[]);
+    })); */
+    return calcLeaderBoardHome(this._response).sort((a, b) => {
+      if (a.totalPoints === b.totalPoints) {
+        if (a.goalsBalance === b.goalsBalance) {
+          if (a.goalsFavor === b.goalsFavor) {
+            return a.goalsOwn - b.goalsOwn;
+          }
+          return b.goalsFavor - a.goalsFavor;
+        }
+        return b.goalsBalance - a.goalsBalance;
+      }
+      return b.totalPoints - a.totalPoints;
+    });
   };
 }
 
