@@ -10,8 +10,8 @@ import totalVictories from '../solidHelpers.ts/totalVictories';
 import Team from '../database/models/TeamModel';
 // import Rank from '../interfaces/RankInterface';
 
-const calcLeaderBoardHome = (list: Team[]) => {
-  return list.map((o) => ({
+const calcLeaderBoardHome = (list: Team[]) =>
+  list.map((o) => ({
     name: o.teamName,
     totalPoints: totalPoints(o.teamHome as unknown as Match[]),
     totalGames: totalGames(o.teamHome as unknown as Match[]),
@@ -21,10 +21,9 @@ const calcLeaderBoardHome = (list: Team[]) => {
     goalsFavor: totalGoalsFavor(o.teamHome as unknown as Match[]),
     goalsOwn: totalGoalsOwn(o.teamHome as unknown as Match[]),
     goalsBalance:
-        totalGoalsFavor(o.teamHome as unknown as Match[])
-        - totalGoalsOwn(o.teamHome as unknown as Match[]),
+      totalGoalsFavor(o.teamHome as unknown as Match[])
+      - totalGoalsOwn(o.teamHome as unknown as Match[]),
     efficiency: efficiency(o.id, o.teamHome as unknown as Match[]),
   }));
-};
 
 export default calcLeaderBoardHome;
