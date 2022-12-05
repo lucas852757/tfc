@@ -2,25 +2,15 @@
 
 import Team from '../database/models/TeamModel';
 import Match from '../database/models/MatchModel';
-import totalPoints from '../solidHelpers.ts/totalPoints';
-import totalGames from '../solidHelpers.ts/totalGames';
-import totalVictories from '../solidHelpers.ts/totalVictories';
-import totalDraws from '../solidHelpers.ts/totalDraws';
-import totalLosses from '../solidHelpers.ts/totalLosses';
-import totalGoalsFavor from '../solidHelpers.ts/totalGoalsFavor';
-import totalGoalsOwn from '../solidHelpers.ts/totalGoalsOwn';
-import efficiency from '../solidHelpers.ts/efficiency';
 import calcLeaderBoardHome from '../solid/calcLeaderBoardHome';
-import Rank from '../interfaces/RankInterface';
 
 class LeaderBoardHomeService {
   private _response!: Team[];
 
   public leaderBoardHome = async () => {
     this._response = await Team.findAll({
-      include: { model: Match, as: 'teamHome', where: { inProgress: false }, },
+      include: { model: Match, as: 'teamHome', where: { inProgress: false } },
     });
-
     /* this._response.map((o) => ({
       name: o.teamName,
       totalPoints: totalPoints(o.teamHome as unknown as Match[]),
