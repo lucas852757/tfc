@@ -6,6 +6,7 @@ class Team extends Model {
   id!: number;
   teamName!: string;
   teamHome!: void;
+  teamAway!: object[];
   // totalPoints!: number;
   // goalsBalance!: number;
   // goalsFavor!: number;
