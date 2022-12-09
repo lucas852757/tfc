@@ -2,7 +2,7 @@
 
 import Team from '../database/models/TeamModel';
 import Match from '../database/models/MatchModel';
-import calcLeaderBoardHome from '../solid/calcLeaderBoard';
+import calcLeaderBoardHome from '../solid/calcLeaderBoardHome';
 
 class LeaderBoardHomeService {
   private _response!: Team[];
