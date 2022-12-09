@@ -1,5 +1,5 @@
 import Match from '../database/models/MatchModel';
-import efficiency from '../solidHelpers.ts/efficiency';
+import efficiency from '../solidHelpersAwayTeam/efficiency';
 import totalDraws from '../solidHelpers.ts/totalDraws';
 import totalGames from '../solidHelpersAwayTeam/totalGames';
 import totalGoalsFavor from '../solidHelpersAwayTeam/totalGoalsFavor';
