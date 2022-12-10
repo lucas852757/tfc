@@ -23,7 +23,7 @@ const calcLeaderBoardHome = (list: Team[]) =>
     goalsBalance:
       totalGoalsFavor(o.teamHome as unknown as Match[])
       - totalGoalsOwn(o.teamHome as unknown as Match[]),
-    efficiency: efficiency(o.id, o.teamHome as unknown as Match[]),
+    efficiency: efficiency(o.teamHome as unknown as Match[]),
   }));
 
 export default calcLeaderBoardHome;
