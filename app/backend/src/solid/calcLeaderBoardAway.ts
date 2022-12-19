@@ -10,7 +10,7 @@ import totalVictories from '../solidHelpersAwayTeam/totalVictories';
 import Team from '../database/models/TeamModel';
 // import Rank from '../interfaces/RankInterface';
 
-const calcLeaderBoardHome = (list: Team[]) =>
+const calcLeaderBoardAway = (list: Team[]) =>
   list.map((o) => ({
     name: o.teamName,
     totalPoints: totalPoints(o.teamAway as unknown as Match[]),
@@ -26,4 +26,4 @@ const calcLeaderBoardHome = (list: Team[]) =>
     efficiency: efficiency(o.teamAway as unknown as Match[]),
   }));
 
-export default calcLeaderBoardHome;
+export default calcLeaderBoardAway;
