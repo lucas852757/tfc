@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
-import LeaderBoardAwayService from "../services/LeaderBoardAwayService";
- 
+import LeaderBoardAwayService from '../services/LeaderBoardAwayService';
+
 class LeaderBoardAwayController {
   constructor(private leaderBoardAwayService = new LeaderBoardAwayService()) {}
 
@@ -15,4 +15,4 @@ class LeaderBoardAwayController {
   };
 }
 
-export default LeaderBoardAwayController; 
+export default LeaderBoardAwayController;

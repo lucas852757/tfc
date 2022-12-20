@@ -1,13 +1,13 @@
-import Match from "../database/models/MatchModel";
-import Team from "../database/models/TeamModel";
-import calcLeaderBoardAway from "../solid/calcLeaderBoardAway";
+import Match from '../database/models/MatchModel';
+import Team from '../database/models/TeamModel';
+import calcLeaderBoardAway from '../solid/calcLeaderBoardAway';
 
 class LeaderBoardAwayServices {
   private _response!: Team[];
 
   public leaderBoard = async () => {
     this._response = await Team.findAll({
-      include: { model: Match, as: "teamAway", where: { inProgress: false } },
+      include: { model: Match, as: 'teamAway', where: { inProgress: false } },
     });
 
     return calcLeaderBoardAway(this._response).sort((a, b) => {

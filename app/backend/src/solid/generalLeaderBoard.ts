@@ -1,8 +1,9 @@
 import leaderboardInterface from '../interfaces/leaderBoardInterface';
 // import calcLeaderBoardHome from './calcLeaderBoardHome';
-const leaderboard: leaderboardInterface[] = [];
 
+// eslint-disable-next-line max-lines-per-function
 const generalLeaderBoard = (arg0: leaderboardInterface[], arg1: leaderboardInterface[]) => {
+  const leaderboard: leaderboardInterface[] = [];
   for (let i0 = 0; i0 <= arg0.length - 1; i0 += 1) {
     for (let i1 = 0; i1 <= arg1.length - 1; i1 += 1) {
       if (arg0[i0].name === arg1[i1].name) {
