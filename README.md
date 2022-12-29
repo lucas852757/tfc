@@ -49,11 +49,11 @@ npm install
  - Antes de começar, seu docker-compose precisa estar na versção 1.29 ou superior. Veja [aqui](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04-pt) ou na [documentação](https://docs.docker.com/compose/install/) como instalá-lo.
 - Execute o comando npm run compose:up para subir container com projeto.
 ```Bash
-  tfc/ compose:up
+  tfc/ npm run compose:up
 ```
 - Para encerrar a execução do projeto basta executar o comando npm run  compose:
 ```Bash
-  tfc/ compose:down
+  tfc/ npm run compose:down
 ```
 # Funcionamento da aplicação:
 ## Tela de Classificação
@@ -85,7 +85,7 @@ Exemplo:</br>
  ![Ferroviária vs Grêmio](pngs/ferroviaria_gremio.png)
 
  # Executando Testes
- - Dentro da pasta app, execute o comando npm run test
+ - Dentro da pasta app/backend, execute o comando npm run test
  ```Bash
-  tfc/app/backend$ npm run test
+  tfc/app/backend npm run test
  ```
