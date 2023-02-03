@@ -51,7 +51,7 @@ npm install
 ```Bash
   tfc/ npm run compose:up
 ```
-- Para encerrar a execução do projeto basta executar o comando npm run  compose:
+- Execute o comando npm run compose:down para derrubar o container.
 ```Bash
   tfc/ npm run compose:down
 ```
@@ -89,3 +89,5 @@ Exemplo:</br>
  ```Bash
   tfc/app/backend npm run test
  ```
+# Contato
+[lucasaparicio11@gmail.com](mailto:lucasaparicio11@gmail.com)
